@@ -1,6 +1,9 @@
 <template>
 	<div class="home">
-		<autocomplete> </autocomplete>
+		<autocomplete @displayCountryName="displayCountryName"> </autocomplete>
+		<div class="container-flex flex-center">
+			<h2>Your country of choice is {{ country }}</h2>
+		</div>
 	</div>
 </template>
 
@@ -10,8 +13,18 @@
 
 	export default {
 		name: "Home",
+		data() {
+			return {
+				country: ""
+			};
+		},
 		components: {
 			autocomplete: autocomplete
+		},
+		methods: {
+			displayCountryName(e) {
+				this.country = e;
+			}
 		}
 	};
 </script>

@@ -93,11 +93,15 @@
 			},
 			setCountryValue(item) {
 				this.countryInput = item;
+				this.$emit("displayCountryName", this.countryInput);
+
 				this.countryFilter = null;
 			},
 
 			setCountryValueEnter() {
 				this.countryInput = this.countryValue;
+				this.$emit("displayCountryName", this.countryInput);
+				this.countryFilter = null;
 			}
 		},
 		mounted() {
